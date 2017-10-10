@@ -7,7 +7,8 @@ FROM ubuntu:latest
 
 MAINTAINER oktoshi <devteam@okcash.co>
 
-RUN apt-get install --yes software-properties-common && \
+RUN apt-get update --yes && apt-get upgrade --yes && \
+    apt-get install --yes software-properties-common && \
     add-apt-repository --yes ppa:bitcoin/bitcoin && \
     apt-get update --yes && apt-get install --yes \
        autoconf \
